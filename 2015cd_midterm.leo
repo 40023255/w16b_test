@@ -34,7 +34,11 @@
 <v t="2014fall.20141212095015.1777" a="E"><vh>class Midterm</vh>
 <v t="amd.20150503182609.1"><vh>__init__</vh></v>
 <v t="amd.20150503173602.1"><vh>index</vh></v>
-<v t="2015.20150616102455.1"><vh>spur</vh></v>
+<v t="2015.20150616102455.1"><vh>name</vh></v>
+<v t="2015.20150622215614.1"><vh>spur1</vh></v>
+<v t="2015.20150622215627.1"><vh>spuraction1</vh></v>
+<v t="2015.20150622215633.1"><vh>drawspur1</vh></v>
+<v t="2015.20150622215639.1"><vh>drawspuraction1</vh></v>
 <v t="amd.20150503183542.1"><vh>spur</vh></v>
 <v t="amd.20150503183546.1"><vh>spuraction</vh></v>
 <v t="amd.20150503185058.1"><vh>drawspur</vh></v>
@@ -313,6 +317,175 @@ def a_40023255(self):
 &lt;head&gt;
 &lt;body&gt;
 &lt;br /&gt;&lt;a href="index"&gt;index&lt;/a&gt;&lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+
+    return outstring</t>
+<t tx="2015.20150622215614.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def spur1(self, N1=15, N2=24, M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+    
+&lt;form method=POST action=spuraction1&gt;
+齒數1:&lt;input type=text name=N1 value='''+str(N1)+'''&gt;&lt;br /&gt;
+齒數2:&lt;input type=text name=N2 value='''+str(N2)+'''&gt;&lt;br /&gt;
+模數:&lt;input type=text name=M value = '''+str(M)+'''&gt;&lt;br /&gt;
+壓力角:&lt;input type=text name=P value = '''+str(P)+'''&gt;&lt;br /&gt;
+&lt;input type=submit value=send&gt;
+&lt;/form&gt;
+&lt;br /&gt;&lt;a href="index"&gt;index&lt;/a&gt;&lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+
+    return outstring</t>
+<t tx="2015.20150622215627.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def spuraction1(self, N1=15, N2=24, M=5, P=15):
+    output = '''
+    &lt;!doctype html&gt;&lt;html&gt;
+    &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+    &lt;title&gt;2015CD Midterm&lt;/title&gt;
+    &lt;/head&gt; 
+    &lt;body&gt;
+    '''
+    output += "齒數1為"+str(N1)+"&lt;br /&gt;"
+    output += "齒數2為"+str(N2)+"&lt;br /&gt;"     
+    output += "模數為"+str(M)+"&lt;br /&gt;"
+    output += "壓力角為"+str(P)+"&lt;br /&gt;"
+    output +='''&lt;br /&gt;&lt;a href="/spur1"&gt;spur1&lt;/a&gt;(按下後再輸入)&lt;br /&gt;'''
+    output +='''&lt;br /&gt;&lt;a href="index"&gt;index&lt;/a&gt;&lt;br /&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    '''
+    
+    return output
+    
+    
+</t>
+<t tx="2015.20150622215633.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def drawspur1(self, N1=15, N2=24, M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;form method=POST action=drawspuraction1&gt;
+
+齒數1:&lt;input type=text name=N1 value='''+str(N1)+'''&gt;&lt;br /&gt;
+齒數2:&lt;input type=text name=N2 value='''+str(N2)+'''&gt;&lt;br /&gt;
+&lt;input type=submit value=畫出正齒輪輪廓&gt;&lt;br /&gt;
+(範圍:15~80)
+
+&lt;/form&gt;
+&lt;br /&gt;&lt;a href="index"&gt;index&lt;/a&gt;&lt;br /&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+window.onload=function(){
+brython();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+'''
+
+    return outstring</t>
+<t tx="2015.20150622215639.1">@cherrypy.expose
+# N 為齒數, M 為模數, P 為壓力角
+def drawspuraction1(self, N1=15, N2=24, M=5, P=15):
+    outstring = '''
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8"&gt;
+&lt;!-- 載入 brython.js --&gt;
+&lt;script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/Cango2D.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/static/gearUtils-04.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;!-- 啟動 brython() --&gt;
+&lt;body onload="brython()"&gt;
+&lt;a href="index"&gt;index&lt;/a&gt;&lt;br /&gt;
+    
+&lt;!-- 以下為 canvas 畫圖程式 --&gt;
+&lt;script type="text/python"&gt;
+# 從 browser 導入 document
+from browser import document
+from math import *
+# 請注意, 這裡導入位於 Lib/site-packages 目錄下的 spur.py 檔案
+import spur
+
+# 準備在 id="plotarea" 的 canvas 中繪圖
+canvas = document["plotarea"]
+ctx = canvas.getContext("2d")
+
+# 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
+# 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
+# midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
+# Gear(midx, midy, rp, n=20, pa=20, color="black"):
+# 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
+
+# 壓力角 P 單位為角度
+M = '''+str(M)+'''
+# 壓力角 pa 單位為角度
+pa = '''+str(P)+'''
+# 齒輪齒數
+n_g1 = '''+str(N1)+'''
+n_g2 = '''+str(N2)+'''
+
+# 計算兩齒輪的節圓半徑
+rp_g1 = M*n_g1/2
+rp_g2 = M*n_g2/2
+
+# 繪圖第1齒輪的圓心座標
+x_g1 = 400
+y_g1 = 400
+
+# 第2齒輪的圓心座標, 假設排列成水平, 表示各齒輪圓心 y 座標相同
+x_g2 = x_g1 
+y_g2 = y_g1+ rp_g1 + rp_g2
+
+# 將第1齒輪順時鐘轉 90 度
+# 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
+ctx.save()
+# translate to the origin of second gear
+ctx.translate(x_g1, y_g1)
+# rotate to engage
+ctx.rotate(pi)
+# put it back
+ctx.translate(-x_g1, -y_g1)
+spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
+ctx.restore()
+
+# 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+ctx.save()
+# translate to the origin of second gear
+ctx.translate(x_g2, y_g2)
+# rotate to engage
+ctx.rotate(-pi/n_g2)
+# put it back
+ctx.translate(-x_g2, -y_g2)
+spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "green")
+ctx.restore()
+
+&lt;/script&gt;
+&lt;canvas id="plotarea" width="3000" height="3000"&gt;&lt;/canvas&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 '''
@@ -1797,7 +1970,11 @@ def index(self):
 
     &lt;/head&gt;
     &lt;body&gt;
+    Final1&lt;br /&gt;
     &lt;a href="a_40023255"&gt;a_40023255&lt;/a&gt;&lt;br /&gt;
+    Final2&lt;br /&gt;
+    &lt;a href="drawspur1"&gt;drawspur1&lt;/a&gt;&lt;br /&gt;
+    &lt;a href="drawspuraction1"&gt;drawspuraction1&lt;/a&gt;&lt;br /&gt;
     &lt;/body&gt;
     &lt;/html&gt;
     '''

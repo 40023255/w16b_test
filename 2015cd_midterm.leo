@@ -1971,8 +1971,8 @@ def index(self):
     &lt;/head&gt;
     &lt;body&gt;
     &lt;a href="a_40023255"&gt;a_40023255&lt;/a&gt;&lt;br /&gt;
-    &lt;a href="drawspur1"&gt;drawspur1&lt;/a&gt;&lt;br /&gt;
-    &lt;a href="drawspuraction1"&gt;drawspuraction1&lt;/a&gt;&lt;br /&gt;
+    &lt;a href="drawspur1"&gt;輸入齒數產生齒輪&lt;/a&gt;&lt;br /&gt;
+    &lt;a href="drawspuraction1"&gt;齒輪預設圖&lt;/a&gt;&lt;br /&gt;
     &lt;/body&gt;
     &lt;/html&gt;
     '''

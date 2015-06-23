@@ -112,8 +112,8 @@ class Midterm(object):
         </head>
         <body>
         <a href="a_40023255">a_40023255</a><br />
-        <a href="drawspur1">drawspur1</a><br />
-        <a href="drawspuraction1">drawspuraction1</a><br />
+        <a href="drawspur1">輸入齒數產生齒輪</a><br />
+        <a href="drawspuraction1">齒輪預設圖</a><br />
         </body>
         </html>
         '''

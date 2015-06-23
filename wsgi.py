@@ -111,9 +111,7 @@ class Midterm(object):
 
         </head>
         <body>
-        Final1<br />
         <a href="a_40023255">a_40023255</a><br />
-        Final2<br />
         <a href="drawspur1">drawspur1</a><br />
         <a href="drawspuraction1">drawspuraction1</a><br />
         </body>

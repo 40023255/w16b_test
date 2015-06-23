@@ -1970,9 +1970,7 @@ def index(self):
 
     &lt;/head&gt;
     &lt;body&gt;
-    Final1&lt;br /&gt;
     &lt;a href="a_40023255"&gt;a_40023255&lt;/a&gt;&lt;br /&gt;
-    Final2&lt;br /&gt;
     &lt;a href="drawspur1"&gt;drawspur1&lt;/a&gt;&lt;br /&gt;
     &lt;a href="drawspuraction1"&gt;drawspuraction1&lt;/a&gt;&lt;br /&gt;
     &lt;/body&gt;
